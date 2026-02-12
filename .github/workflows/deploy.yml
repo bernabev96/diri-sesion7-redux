@@ -32,7 +32,8 @@ jobs:
       - name: Build
         run: npm run build -- --mode production
         env:
-          VITE_APP_BASE_URL: /diri-sesion5-comida/
+          VITE_APP_BASE_URL: /diri-sesion6-firebase/
+          VITE_FIREBASE_DB_URL: ${{ secrets.VITE_FIREBASE_DB_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
