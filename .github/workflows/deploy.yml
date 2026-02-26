@@ -32,7 +32,7 @@ jobs:
       - name: Build
         run: npm run build -- --mode production
         env:
-          VITE_APP_BASE_URL: /diri-sesion6-firebase/
+          VITE_APP_BASE_URL: /diri-sesion7-redux/
           VITE_FIREBASE_DB_URL: ${{ secrets.VITE_FIREBASE_DB_URL }}
 
       - name: Upload artifact
