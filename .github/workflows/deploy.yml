@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "ac7-1-redux-toolkit" ]
 
 permissions:
   contents: read
