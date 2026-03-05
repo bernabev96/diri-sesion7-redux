@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { placeOrder } from "./ordersThunks";
 
 interface OrdersState {
@@ -24,7 +24,9 @@ const ordersSlice = createSlice({
             state.error = undefined;
             state.lastOrderId = undefined;
             state.message = undefined;
-        },
+        }, setError(state, action: PayloadAction<string>){
+          state.error = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(placeOrder.pending, (state) => {
@@ -45,5 +47,5 @@ const ordersSlice = createSlice({
     },
 });
 
-export const { clearOrderState } = ordersSlice.actions;
+export const { clearOrderState, setError } = ordersSlice.actions;
 export default ordersSlice.reducer;

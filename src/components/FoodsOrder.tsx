@@ -4,6 +4,7 @@ import logger from "../utils/logger";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../redux/store";
 import { placeOrder } from "../features/orders/ordersThunks";
+import { setError } from "../features/orders/ordersSlice";
 
 interface FoodsOrderProps {
     food: MenuItem;
@@ -41,6 +42,7 @@ function FoodOrder(props: FoodsOrderProps) {
 
     const handleSendOrder = async () => {
         if (!name.trim() || !phone.trim()) {
+            dispatch(setError("Por favor, ingresa tu nombre y teléfono."));
             return;
         }
 
